@@ -17,5 +17,15 @@ namespace RentMyWrox
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        void Application_Error(object sender, EventArgs arg)
+        {
+            if(HttpContext.Current.Server.GetLastError() != null)
+            {
+                Exception myException = HttpContext.Current.Server
+                    .GetLastError()
+                    .GetBaseException();
+            }
+        }
     }
 }
