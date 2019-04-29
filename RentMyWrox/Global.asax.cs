@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +26,8 @@ namespace RentMyWrox
                 Exception myException = HttpContext.Current.Server
                     .GetLastError()
                     .GetBaseException();
+                ILogger logger = LogManager.GetCurrentClassLogger();
+                logger.Error(myException, myException.Message);
             }
         }
     }

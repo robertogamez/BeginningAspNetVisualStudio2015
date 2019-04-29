@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using RentMyWrox.Models
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -43,7 +45,10 @@
     <div id="section">
         @RenderBody()
         <span>
-            @Html.Action("Recent", "Item")
+            @if (ConfigManager.ViewNotifications)
+            {
+                @Html.Action("NonAdminSnippet", "Notifications")
+             }
         </span>
     </div>
     <div id="specialnotes">
