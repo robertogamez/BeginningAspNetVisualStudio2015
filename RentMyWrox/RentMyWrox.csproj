@@ -358,6 +358,9 @@
     </None>
     <Content Include="WebForms.Master" />
     <Content Include="Web.sitemap" />
+    <None Include="Web.RentMyWroxApp - Web Deploy.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
